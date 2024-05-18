@@ -4,6 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border-radius: 3px;
+    color: #222222;
+}
+
+body {
+    background: radial-gradient(#dddddd 1%, transparent 10%);
+    background-color: #f8f8f8;
+    background-size: 20px 20px;
 }
 
 section {
@@ -18,7 +26,7 @@ h1, h2 {
     width: 100%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     text-align: center;
-    padding: 10px;
+    padding: 7px;
 }
 
 h1 {
@@ -32,25 +40,21 @@ h2 {
 section div {
     display: flex;
     flex-direction: column;
-    min-width: 200px;
-    max-width: 25%;
-    min-height: 70px;
+    max-width: 400px;
     background: white;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px 1px #cccccc;
+    box-shadow: 0 0 2px 1px #cccccc;
     padding: 3px;
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    padding: 0 10px 10px;
+    padding: 0 8px 9px;
 }
 
 pre {
-    background: grey;
+    background: #666666;
     height: 100%;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px;
     color: white;
 }
