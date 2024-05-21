@@ -36,15 +36,22 @@ new_lst = string.split("-") + string.split()               # ['a', 'a', 'a', 'a-
 print("_".join(new_lst))                                   # a_a_a_a-a-a ("join" only works with string items)
 
 
-tpl = ("a", "b", "c")
-tpl2 = ("a",)
-tpl3 = ("abc")
-# tpl[0] = "f"                                               # Error (You can't change tuple)
-new = tpl + tpl2
-tpl *= 3
-print("a" in tpl, "f" not in tpl)
-tpl4 = tuple(string)
-print(tpl4)
-txt = "!".join(tpl4)
-a, b, c, d, e = tpl4
-print(a, b, c, d , e)
+tpl = ("a", "b", "c")                                      # You can't change data in tuple
+new_tpl = tpl + ("a",) + tuple("abc")                      # ('a', 'b', 'c', 'a', 'a', 'b', 'c')
+tpl *= 2                                                   # ('a', 'b', 'c', 'a', 'b', 'c')
+print("a" in tpl, "b" not in tpl)                          # True False
+txt = "!".join(tpl)                                        # a!b!c!a!b!c
+e1, e2 = ("a", "b")                                        # tuple unpacking works for a list too
+list_from_tuple = list(tpl)                                # ['a', 'b', 'c', 'a', 'b', 'c']
+
+
+print("abcdef"[1:-1])                                      # bcde
+print("abcdef"[1:])                                        # bcdef
+print("abcdef"[:2])                                        # ab
+print("abcdef"[1:-1:2])                                    # bd (last number 2 is sampling step)
+print("abcdef"[::2])                                       # ace
+print("abcdef"[:])                                         # abcdef (The entire slice may be needed to copy the original object)
+print("abcdef"[::-1])                                      # fedcba (Reverse object)
+new_lst_from_tuple = list(tuple("abcdef"))
+del new_lst_from_tuple[1:4]                                # Slice is also used to delete data
+print(new_lst_from_tuple)                                  # ['a', 'e', 'f']
